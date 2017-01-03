@@ -1,0 +1,79 @@
+AUTHORS: 	Jack Strickland
+
+DESCRIPTION:	
+	A BASH-style shell that uses 3 built in functions (cd,pwd,exit), 				 					
+Supports I/O redirection, with only one stream at a time. Uses execvp for every
+other command.
+
+	It supports I/O direction,but can only be used once per command.
+The main gist of the program is that whenever tokenizer is called, it will split the command differently based on whether the string contains "<>"
+then this is returned to execute(), which has two new parameters. one for out, one for in
+will perform redirection if either of those fields =1
+-------------------------------------------------------------------------------
+
+
+TECHSHELL OVERVIEW:
+-------------------------
+
+main()
+{
+	contains loop to read, parse, tokenize, and execute commands.
+	loop depends on shell_status, which is returned by execute.
+ 	input redirects and output redirects are also found on main()
+}
+
+void prompt()
+{
+	Prints current working directory, followed by $. Called every line before input.
+}
+
+char* parse()
+{
+	In this function we get the standard input into line by using buffersize as required. For this script we have used buffer size of 1024
+	and return line whenever, and wherever is necessary
+}
+
+char** tokenize()
+
+{
+	Here we tokenize the input from user. 
+	We also use redirection here so if there is any <> occured we will split token as needed,
+	if there is no redirection, it is split with a different set of delimiters.
+}
+
+int execute()
+{
+	Takes input that is returned from tokenize. Recognizes if there is redirection,
+	and if so, will open the correct stream after forking the process. 
+
+}
+
+int shell_exit()
+
+{	
+	This iss used to exit the terminal or shell by return (0).
+}
+
+int shell_cd()
+{
+	This is used to change directory in shell, using chdir.
+}
+
+int shell_pwd()
+{
+	This function is used to get the current working directory, by getcwd.
+}
+
+
+ERRORS: 
+--------------------------
+
+Program fully implements shell functionality as described in the assignment
+
+***EXCEPT when using MULITPLE input/output redirections on same line***
+
+
+
+
+
+
