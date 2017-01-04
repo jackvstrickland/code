@@ -30,7 +30,7 @@ for x in range(0, test_cases):
 	data = input()
 	coordinates = data.split(' ')
 
-	print(coordinates)
+	# print(coordinates)
 	
 	p1 = Point(coordinates[0], coordinates[1])
 	p2 = Point(coordinates[2], coordinates[3])
