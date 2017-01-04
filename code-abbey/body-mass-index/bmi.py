@@ -12,5 +12,9 @@ for person in range(0,test_cases):
 	else:	
 		bmi_list.append("obese")
 
-print("answer:\n")
-print(bmi_list)
+print("answer:")
+for patient in range(len(bmi_list)):
+	print(bmi_list[patient] + " ",  end="")
+
+
+
