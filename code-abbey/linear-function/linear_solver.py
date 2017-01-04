@@ -4,11 +4,11 @@
 
 class Point:
 	def __init__(self, x, y):
-		self.x, self.y = float(x), float(y)
+		self.x, self.y = int(x), int(y)
 
 	def find_slope(self, another_point):
 		slope = (another_point.y - self.y) / (another_point.x - self.x)
-		return slope
+		return int(slope)
 
 	def print_values(self):
 		print("(" +self.x + ", " + self.y + ")")
@@ -44,4 +44,4 @@ for x in range(0, test_cases):
 
 
 for x in range(0, len(answers), 2):
-	print("(" + answers[x] + ", " + answers[x+1] + ")", " ", end="")
+	print("(" + answers[x] + " " + answers[x+1] + ")", " ", end="")
