@@ -38,9 +38,10 @@ for x in range(0, test_cases):
 	slope = p1.find_slope(p2)
 	b = p1.y - (slope * p1.x)
 
-	answers.append(slope)
-	answers.append(b)
+	answers.append(str(slope))
+	answers.append(str(b))
 
 
 
-print(answers)
+for x in range(0, len(answers), 2):
+	print("(" + answers[x] + ", " + answers[x+1] + ")", " ", end="")
