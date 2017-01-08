@@ -4,7 +4,14 @@ def sumBothSides(arr,n):
 
 	answer = None
 
-	if sum(arr[1:n]) == 0:
+	if n == 1:
+		answer = "YES"
+		return answer
+
+	if sum(arr[1:]) == 0:
+		answer = "YES"
+		return answer
+	elif sum(arr[:n-1]) == 0:
 		answer = "YES"
 		return answer
 	else:
