@@ -15,11 +15,16 @@ for arr_i in range(6):
    arr_t = [int(arr_temp) for arr_temp in input().strip().split(' ')]
    arr.append(arr_t)
 
-# hg_max, hg_nextMax = None
+hg_max= None
 
 for row in range(0,4):
  	for col in range(0,4):
- 		sums.append(getHourglassSum(arr, row, col))
+ 		hg_sum = getHourglassSum(arr,row,col)
+ 		
+ 		if hg_max is None:
+ 			hg_max = hg_sum
+ 		elif hg_sum > hg_max:
+ 			hg_max = hg_sum
 
-print(sums)
+print(hg_max)
 
