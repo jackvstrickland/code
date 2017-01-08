@@ -2,17 +2,17 @@
 # Head ends here
 def pairs(a,k,size):
     # a is the list of numbers and k is the difference value
-    answer = 0
+    answer = 0 
+    x = 0
     j = 1
 
     while (j < size):
-        i=0
-        diff = a[j] - a[i]
-
+        diff = a[j] - a[x]
         if (diff == k):
             answer+=1
+            j+=1
         elif (diff > k):
-            i+=1
+            x+=1
         elif (diff < k):
             j+=1
 
@@ -29,5 +29,5 @@ if __name__ == '__main__':
     _k=a[1]
     b = input().strip()
     b = list(map(int, b.split(' ')))
-    b = b.sort()
-    print(pairs(b,_k,_a_size))
+    nums = sorted(b)
+    print(pairs(nums,_k,_a_size))
