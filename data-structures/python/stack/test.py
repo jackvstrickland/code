@@ -17,4 +17,3 @@ def runTest():
 
 if __name__ == "__main__":
 	runTest()
-	
